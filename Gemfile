@@ -1,12 +1,14 @@
 source 'http://ruby.taobao.org/'
 
 gem 'bootstrap-sass'
+gem 'bootstrap_form'
 gem 'coffee-rails'
 gem 'rails', '4.1.1'
 gem 'haml-rails'
 gem 'sass-rails'
 gem 'uglifier'
 gem 'jquery-rails'
+gem 'bcrypt-ruby'
 
 group :development do
   gem 'sqlite3'
