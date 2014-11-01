@@ -14,8 +14,13 @@ Video.create(title: "Monk", description: "Paranoid SF detective", category: dram
 Video.create(title: "South Park", description: "Crazy Kids!", category: dramas, small_cover_url: "/tmp/south_park.jpg", large_cover_url: "/tmp/monk_large.jpg")
 Video.create(title: "Family Guy", description: "Talking dog", category: comedies, small_cover_url: "/tmp/family_guy.jpg", large_cover_url: "/tmp/monk_large.jpg")
 Video.create(title: "Futurama", description: "Space Travel!", category: comedies, small_cover_url: "/tmp/futurama.jpg", large_cover_url: "/tmp/monk_large.jpg")
-Video.create(title: "Monk", description: "Paranoid SF detective", category: dramas, small_cover_url: "/tmp/monk.jpg", large_cover_url: "/tmp/monk_large.jpg")
+monk = Video.create(title: "Monk", description: "Paranoid SF detective", category: dramas, small_cover_url: "/tmp/monk.jpg", large_cover_url: "/tmp/monk_large.jpg")
 Video.create(title: "South Park", description: "Crazy Kids!", category: dramas, small_cover_url: "/tmp/south_park.jpg", large_cover_url: "/tmp/monk_large.jpg")
 Video.create(title: "Family Guy", description: "Talking dog", category: comedies, small_cover_url: "/tmp/family_guy.jpg", large_cover_url: "/tmp/monk_large.jpg")
 Video.create(title: "Family Guy", description: "Talking dog", category: comedies, small_cover_url: "/tmp/family_guy.jpg", large_cover_url: "/tmp/monk_large.jpg")
 Video.create(title: "Family Guy", description: "Talking dog", category: comedies, small_cover_url: "/tmp/family_guy.jpg", large_cover_url: "/tmp/monk_large.jpg")
+
+navy = User.create(full_name: "Ben Zheng", password: "password", email: "navy@lohaswork.com")
+
+Review.create(user: navy, video: monk, rating: 3, content: "This is a really good movie!")
+Review.create(user: navy, video: monk, rating: 2, content: "Horrible movie!")
