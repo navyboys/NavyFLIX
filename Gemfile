@@ -1,4 +1,5 @@
 source 'http://ruby.taobao.org/'
+ruby '2.0.0'
 
 gem 'bootstrap-sass'
 gem 'bootstrap_form'
@@ -14,7 +15,6 @@ gem 'faker'
 
 group :development do
   gem 'sqlite3'
-  gem 'pry'
   gem 'pry-nav'
   gem 'thin'
   gem "better_errors"
@@ -23,6 +23,7 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'pry'
 end
 
 group :test do
