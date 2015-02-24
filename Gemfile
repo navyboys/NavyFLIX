@@ -1,5 +1,4 @@
-source 'http://ruby.taobao.org/'
-ruby '2.0.0'
+source 'https://rubygems.org'
 
 gem 'bootstrap-sass'
 gem 'bootstrap_form'
@@ -19,6 +18,7 @@ group :development do
   gem 'thin'
   gem "better_errors"
   gem "binding_of_caller"
+  gem "letter_opener"
 end
 
 group :development, :test do

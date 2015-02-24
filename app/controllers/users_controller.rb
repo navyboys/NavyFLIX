@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     params.permit!
     @user = User.new(params[:user])
     if @user.save
+      AppMailer.send_welcome_email(@user).deliver
       redirect_to sign_in_path
     else
       render :new
