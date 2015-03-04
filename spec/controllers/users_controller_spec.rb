@@ -8,7 +8,7 @@ describe UsersController do
     end
   end
 
-  describe "POST create" do
+  describe "POST create", sidekiq: :inline do
     context "with valid input" do
       before do
         post :create, user: Fabricate.attributes_for(:user)

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe ForgotPasswordsController do
+describe ForgotPasswordsController, sidekiq: :inline do
   context 'with blank input' do
     before { post :create, email: '' }
 
