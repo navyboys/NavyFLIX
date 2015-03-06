@@ -2,6 +2,10 @@ Myflix::Application.routes.draw do
   root to: 'pages#front'
   get 'home', to: 'videos#index'
 
+  namespace :admin do
+    resources :videos, only: [:new, :create]
+  end
+
   get 'ui(/:action)', controller: 'ui'
   get 'register', to: "users#new"
   get 'register/:token', to: 'users#new_with_invitation_token', as: 'register_with_token'
