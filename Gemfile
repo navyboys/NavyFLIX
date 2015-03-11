@@ -16,6 +16,7 @@ gem 'unicorn'
 gem 'sentry-raven'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'fog-aws'
 
 group :development do
   gem 'sqlite3'
