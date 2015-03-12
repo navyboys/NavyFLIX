@@ -18,6 +18,8 @@ gem 'sentry-raven'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'
+gem 'stripe'
+gem 'figaro'
 
 group :development do
   gem 'sqlite3'
