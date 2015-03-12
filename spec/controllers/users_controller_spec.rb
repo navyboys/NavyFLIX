@@ -74,6 +74,7 @@ describe UsersController do
       end 
 
       it "sends out email containing the user's name with valid inputs" do
+        Stripe.api_key = ENV['STRIPE_SECRET_KEY']
         post :create, user: { email: 'joe@example.com', password: "password", full_name: 'Joe Smith' }
         expect(ActionMailer::Base.deliveries.last.body).to include('Joe Smith')
       end
