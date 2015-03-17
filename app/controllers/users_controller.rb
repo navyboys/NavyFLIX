@@ -18,12 +18,14 @@ class UsersController < ApplicationController
         @user.save
         handle_invitation
         AppMailer.delay.send_welcome_email(@user)
+        flash[:error] = 'Thank you for registering with NavyFlix. Please sign in now.'
         redirect_to sign_in_path
       else
         flash[:error] = charge.error_message
         render :new
       end
     else
+      flash[:error] = 'Invalid user information. Please check the errors below.'
       render :new
     end
   end

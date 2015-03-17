@@ -44,6 +44,7 @@ group :test do
   gem 'vcr'
   gem 'webmock'
   gem 'selenium-webdriver', '~> 2.45.0'
+  gem 'capybara-webkit'
 end
 
 group :production do
