@@ -11,6 +11,7 @@ describe UsersController do
   describe "POST create", sidekiq: :inline do
     context "with valid input" do
       before do
+        StripeWrapper::Charge.stub(:create)
         post :create, user: Fabricate.attributes_for(:user)
       end
 
@@ -30,6 +31,7 @@ describe UsersController do
       let(:joe) { User.where(email: 'joe@example.com').first }
       before {        
         invitation = Fabricate(:invitation, inviter: alice, recipient_email: 'joe@example.com')
+        StripeWrapper::Charge.stub(:create)
         post :create, user: { email: 'joe@example.com', password: 'password', full_name: 'Joe Doe' }, invitation_token: invitation.token
       }
 
@@ -48,6 +50,7 @@ describe UsersController do
 
     context "with invalid input" do
       before do
+        StripeWrapper::Charge.stub(:create)
         post :create, user: { password: "password" }
       end
 
@@ -66,6 +69,7 @@ describe UsersController do
 
     context 'sending emails' do
 
+      before { StripeWrapper::Charge.stub(:create) }
       after { ActionMailer::Base.deliveries.clear }
 
       it 'sends out email to the user with valid inputs' do
@@ -74,7 +78,6 @@ describe UsersController do
       end 
 
       it "sends out email containing the user's name with valid inputs" do
-        Stripe.api_key = ENV['STRIPE_SECRET_KEY']
         post :create, user: { email: 'joe@example.com', password: "password", full_name: 'Joe Smith' }
         expect(ActionMailer::Base.deliveries.last.body).to include('Joe Smith')
       end

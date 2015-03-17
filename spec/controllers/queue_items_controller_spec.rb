@@ -156,7 +156,7 @@ describe QueueItemsController do
       end
 
       it "redirects to the my queue page" do
-        post :update_queue, queue_items: [{id: queue_item1.id, position: 3.4}, {id: queue_item2.id, position: 1}]
+        post :update_queue, queue_items: [{id: queue_item1.id, position: 2.1}, {id: queue_item2.id, position: 1}]
         expect(response).to redirect_to my_queue_path
       end
 
@@ -166,7 +166,7 @@ describe QueueItemsController do
       end
 
       it "does not change the queue items" do
-        post :update_queue, queue_items: [{id: queue_item1.id, position: 3}, {id: queue_item2.id, position: 2.1}]
+        post :update_queue, queue_items: [{id: queue_item1.id, position: 3.1}, {id: queue_item2.id, position: 1}]
         expect(queue_item1.reload.position).to eq(1)
       end
     end
