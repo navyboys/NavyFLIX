@@ -36,7 +36,8 @@
           %article.review
             %li.row
               .col-sm-2
-                %span Rating: #{review.rating} / 5
+                %span Rating: 
+                = ReviewDecorator.decorate(review).rating
                 %p
                   by
                   = link_to review.user.full_name, review.user
