@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.stripe.com/v1/charges
+    uri: https://api.stripe.com/v1/customers
     body:
       encoding: US-ASCII
-      string: amount=999&currency=usd&card=tok_15hSQLCNtHoykpM8i6DMB3QD&description=Sign%20up%20charge%20for%20john%40example.com
+      string: card=tok_15jNfVCNtHoykpM8vT9aIo1W&email=john%40example.com&plan=base
     headers:
       Accept:
       - '*/*; q=0.5, application/xml'
@@ -22,7 +22,7 @@ http_interactions:
         NavyMAC.local 14.1.0 Darwin Kernel Version 14.1.0: Thu Feb 26 19:26:47 PST
         2015; root:xnu-2782.10.73~1/RELEASE_X86_64 x86_64"}'
       Content-Length:
-      - '115'
+      - '68'
   response:
     status:
       code: 402
@@ -31,11 +31,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Tue, 17 Mar 2015 21:40:30 GMT
+      - Mon, 23 Mar 2015 05:00:06 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '162'
+      - '117'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -49,7 +49,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_ji7DRLC4aoTecdsd
+      - req_q0ys7keKLwVSo0gt
       Stripe-Version:
       - '2015-02-18'
     body:
@@ -59,10 +59,9 @@ http_interactions:
           "error": {
             "message": "Your card was declined.",
             "type": "card_error",
-            "code": "card_declined",
-            "charge": "ch_15hSQLCNtHoykpM8WlG7In94"
+            "code": "card_declined"
           }
         }
     http_version: 
-  recorded_at: Tue, 17 Mar 2015 21:40:30 GMT
+  recorded_at: Mon, 23 Mar 2015 05:00:06 GMT
 recorded_with: VCR 2.9.3

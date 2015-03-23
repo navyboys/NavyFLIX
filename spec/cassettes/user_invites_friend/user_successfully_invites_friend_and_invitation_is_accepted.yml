@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.stripe.com/v1/charges
+    uri: https://api.stripe.com/v1/customers
     body:
       encoding: US-ASCII
-      string: amount=999&currency=usd&card=tok_15hNEeCNtHoykpM8qiiILqlA&description=Sign%20up%20charge%20for%20john%40example.com
+      string: card=tok_15jNfkCNtHoykpM82TJBNs9a&email=john%40example.com&plan=base
     headers:
       Accept:
       - '*/*; q=0.5, application/xml'
@@ -22,7 +22,7 @@ http_interactions:
         NavyMAC.local 14.1.0 Darwin Kernel Version 14.1.0: Thu Feb 26 19:26:47 PST
         2015; root:xnu-2782.10.73~1/RELEASE_X86_64 x86_64"}'
       Content-Length:
-      - '115'
+      - '68'
   response:
     status:
       code: 200
@@ -31,11 +31,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Tue, 17 Mar 2015 16:08:05 GMT
+      - Mon, 23 Mar 2015 05:00:21 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '1373'
+      - '2301'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -49,7 +49,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_SutYB8MavfJAaz8L
+      - req_Gjr34ZZJ0YwIIxD9
       Stripe-Version:
       - '2015-02-18'
       Strict-Transport-Security:
@@ -58,62 +58,92 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "ch_15hNEeCNtHoykpM8Gp9pKLHk",
-          "object": "charge",
-          "created": 1426608484,
+          "object": "customer",
+          "created": 1427086821,
+          "id": "cus_5vE8OFSBnBydBw",
           "livemode": false,
-          "paid": true,
-          "status": "succeeded",
-          "amount": 999,
-          "currency": "usd",
-          "refunded": false,
-          "source": {
-            "id": "card_15hNEeCNtHoykpM8gDXTT8zS",
-            "object": "card",
-            "last4": "4242",
-            "brand": "Visa",
-            "funding": "credit",
-            "exp_month": 7,
-            "exp_year": 2015,
-            "fingerprint": "cTYkI8ep8lhSZrdM",
-            "country": "US",
-            "name": null,
-            "address_line1": null,
-            "address_line2": null,
-            "address_city": null,
-            "address_state": null,
-            "address_zip": null,
-            "address_country": null,
-            "cvc_check": "pass",
-            "address_line1_check": null,
-            "address_zip_check": null,
-            "dynamic_last4": null,
-            "metadata": {},
-            "customer": null
-          },
-          "captured": true,
-          "balance_transaction": "txn_15hNEeCNtHoykpM8EuHZeFB3",
-          "failure_message": null,
-          "failure_code": null,
-          "amount_refunded": 0,
-          "customer": null,
-          "invoice": null,
-          "description": "Sign up charge for john@example.com",
-          "dispute": null,
+          "description": null,
+          "email": "john@example.com",
+          "delinquent": false,
           "metadata": {},
-          "statement_descriptor": null,
-          "fraud_details": {},
-          "receipt_email": null,
-          "receipt_number": null,
-          "shipping": null,
-          "refunds": {
+          "subscriptions": {
             "object": "list",
-            "total_count": 0,
+            "total_count": 1,
             "has_more": false,
-            "url": "/v1/charges/ch_15hNEeCNtHoykpM8Gp9pKLHk/refunds",
-            "data": []
-          }
+            "url": "/v1/customers/cus_5vE8OFSBnBydBw/subscriptions",
+            "data": [
+              {
+                "id": "sub_5vE8WgIQn5Prnw",
+                "plan": {
+                  "interval": "month",
+                  "name": "the base plan",
+                  "created": 1427064300,
+                  "amount": 999,
+                  "currency": "usd",
+                  "id": "base",
+                  "object": "plan",
+                  "livemode": false,
+                  "interval_count": 1,
+                  "trial_period_days": null,
+                  "metadata": {},
+                  "statement_descriptor": null
+                },
+                "object": "subscription",
+                "start": 1427086821,
+                "status": "active",
+                "customer": "cus_5vE8OFSBnBydBw",
+                "cancel_at_period_end": false,
+                "current_period_start": 1427086821,
+                "current_period_end": 1429765221,
+                "ended_at": null,
+                "trial_start": null,
+                "trial_end": null,
+                "canceled_at": null,
+                "quantity": 1,
+                "application_fee_percent": null,
+                "discount": null,
+                "tax_percent": null,
+                "metadata": {}
+              }
+            ]
+          },
+          "discount": null,
+          "account_balance": 0,
+          "currency": "usd",
+          "sources": {
+            "object": "list",
+            "total_count": 1,
+            "has_more": false,
+            "url": "/v1/customers/cus_5vE8OFSBnBydBw/sources",
+            "data": [
+              {
+                "id": "card_15jNfkCNtHoykpM8nSeBx1qd",
+                "object": "card",
+                "last4": "4242",
+                "brand": "Visa",
+                "funding": "credit",
+                "exp_month": 7,
+                "exp_year": 2015,
+                "fingerprint": "cTYkI8ep8lhSZrdM",
+                "country": "US",
+                "name": null,
+                "address_line1": null,
+                "address_line2": null,
+                "address_city": null,
+                "address_state": null,
+                "address_zip": null,
+                "address_country": null,
+                "cvc_check": "pass",
+                "address_line1_check": null,
+                "address_zip_check": null,
+                "dynamic_last4": null,
+                "metadata": {},
+                "customer": "cus_5vE8OFSBnBydBw"
+              }
+            ]
+          },
+          "default_source": "card_15jNfkCNtHoykpM8nSeBx1qd"
         }
     http_version: 
-  recorded_at: Tue, 17 Mar 2015 16:08:05 GMT
+  recorded_at: Mon, 23 Mar 2015 05:00:21 GMT
 recorded_with: VCR 2.9.3

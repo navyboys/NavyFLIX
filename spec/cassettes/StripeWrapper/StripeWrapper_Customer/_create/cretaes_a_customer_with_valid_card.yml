@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.stripe.com/v1/customers
+    uri: https://api.stripe.com/v1/tokens
     body:
       encoding: US-ASCII
-      string: card=tok_15jNf7CNtHoykpM8Uo4sWF1q&email=john%40example.com&plan=base
+      string: card[number]=4242424242424242&card[exp_month]=6&card[exp_year]=2018&card[cvc]=314
     headers:
       Accept:
       - '*/*; q=0.5, application/xml'
@@ -22,7 +22,7 @@ http_interactions:
         NavyMAC.local 14.1.0 Darwin Kernel Version 14.1.0: Thu Feb 26 19:26:47 PST
         2015; root:xnu-2782.10.73~1/RELEASE_X86_64 x86_64"}'
       Content-Length:
-      - '68'
+      - '81'
   response:
     status:
       code: 200
@@ -31,11 +31,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Mon, 23 Mar 2015 04:59:41 GMT
+      - Mon, 23 Mar 2015 00:45:51 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '2301'
+      - '726'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -49,7 +49,97 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_b6z3Q2tnBQ5Hzi95
+      - req_j3Txp5AxfRz6wObR
+      Stripe-Version:
+      - '2015-02-18'
+      Strict-Transport-Security:
+      - max-age=31556926; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "id": "tok_15jJhTCNtHoykpM8eoSayyzi",
+          "livemode": false,
+          "created": 1427071551,
+          "used": false,
+          "object": "token",
+          "type": "card",
+          "card": {
+            "id": "card_15jJhTCNtHoykpM8YHDPDQ6S",
+            "object": "card",
+            "last4": "4242",
+            "brand": "Visa",
+            "funding": "credit",
+            "exp_month": 6,
+            "exp_year": 2018,
+            "fingerprint": "cTYkI8ep8lhSZrdM",
+            "country": "US",
+            "name": null,
+            "address_line1": null,
+            "address_line2": null,
+            "address_city": null,
+            "address_state": null,
+            "address_zip": null,
+            "address_country": null,
+            "cvc_check": "unchecked",
+            "address_line1_check": null,
+            "address_zip_check": null,
+            "dynamic_last4": null
+          },
+          "client_ip": "70.79.21.208"
+        }
+    http_version: 
+  recorded_at: Mon, 23 Mar 2015 00:45:51 GMT
+- request:
+    method: post
+    uri: https://api.stripe.com/v1/customers
+    body:
+      encoding: US-ASCII
+      string: card=tok_15jJhTCNtHoykpM8eoSayyzi&email=diana_daugherty%40douglasromaguera.org&plan=base
+    headers:
+      Accept:
+      - '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Stripe/v1 RubyBindings/1.20.2
+      Authorization:
+      - Bearer sk_test_yENZrfNUuVXFshfe9yOkatfu
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Stripe-Client-User-Agent:
+      - '{"bindings_version":"1.20.2","lang":"ruby","lang_version":"2.0.0 p247 (2013-06-27)","platform":"x86_64-darwin13.0.0","publisher":"stripe","uname":"Darwin
+        NavyMAC.local 14.1.0 Darwin Kernel Version 14.1.0: Thu Feb 26 19:26:47 PST
+        2015; root:xnu-2782.10.73~1/RELEASE_X86_64 x86_64"}'
+      Content-Length:
+      - '88'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 23 Mar 2015 00:45:52 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '2321'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS, DELETE
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '300'
+      Cache-Control:
+      - no-cache, no-store
+      Request-Id:
+      - req_BD1o59NhPHEMrb7X
       Stripe-Version:
       - '2015-02-18'
       Strict-Transport-Security:
@@ -59,21 +149,21 @@ http_interactions:
       string: |
         {
           "object": "customer",
-          "created": 1427086781,
-          "id": "cus_5vE7GUn4vK15RN",
+          "created": 1427071551,
+          "id": "cus_5vA14h4UTTCoS1",
           "livemode": false,
           "description": null,
-          "email": "john@example.com",
+          "email": "diana_daugherty@douglasromaguera.org",
           "delinquent": false,
           "metadata": {},
           "subscriptions": {
             "object": "list",
             "total_count": 1,
             "has_more": false,
-            "url": "/v1/customers/cus_5vE7GUn4vK15RN/subscriptions",
+            "url": "/v1/customers/cus_5vA14h4UTTCoS1/subscriptions",
             "data": [
               {
-                "id": "sub_5vE7t0ugg7zOBL",
+                "id": "sub_5vA1JxOBmeE3F4",
                 "plan": {
                   "interval": "month",
                   "name": "the base plan",
@@ -89,12 +179,12 @@ http_interactions:
                   "statement_descriptor": null
                 },
                 "object": "subscription",
-                "start": 1427086781,
+                "start": 1427071551,
                 "status": "active",
-                "customer": "cus_5vE7GUn4vK15RN",
+                "customer": "cus_5vA14h4UTTCoS1",
                 "cancel_at_period_end": false,
-                "current_period_start": 1427086781,
-                "current_period_end": 1429765181,
+                "current_period_start": 1427071551,
+                "current_period_end": 1429749951,
                 "ended_at": null,
                 "trial_start": null,
                 "trial_end": null,
@@ -114,16 +204,16 @@ http_interactions:
             "object": "list",
             "total_count": 1,
             "has_more": false,
-            "url": "/v1/customers/cus_5vE7GUn4vK15RN/sources",
+            "url": "/v1/customers/cus_5vA14h4UTTCoS1/sources",
             "data": [
               {
-                "id": "card_15jNf6CNtHoykpM81OT85oxJ",
+                "id": "card_15jJhTCNtHoykpM8YHDPDQ6S",
                 "object": "card",
                 "last4": "4242",
                 "brand": "Visa",
                 "funding": "credit",
-                "exp_month": 7,
-                "exp_year": 2015,
+                "exp_month": 6,
+                "exp_year": 2018,
                 "fingerprint": "cTYkI8ep8lhSZrdM",
                 "country": "US",
                 "name": null,
@@ -138,12 +228,12 @@ http_interactions:
                 "address_zip_check": null,
                 "dynamic_last4": null,
                 "metadata": {},
-                "customer": "cus_5vE7GUn4vK15RN"
+                "customer": "cus_5vA14h4UTTCoS1"
               }
             ]
           },
-          "default_source": "card_15jNf6CNtHoykpM81OT85oxJ"
+          "default_source": "card_15jJhTCNtHoykpM8YHDPDQ6S"
         }
     http_version: 
-  recorded_at: Mon, 23 Mar 2015 04:59:42 GMT
+  recorded_at: Mon, 23 Mar 2015 00:45:52 GMT
 recorded_with: VCR 2.9.3
