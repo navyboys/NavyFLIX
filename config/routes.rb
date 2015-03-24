@@ -35,4 +35,6 @@ Myflix::Application.routes.draw do
     end
     resources :reviews, only: [:create]
   end
+
+  mount StripeEvent::Engine, at: '/stripe_events'
 end
