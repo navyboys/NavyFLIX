@@ -16,7 +16,7 @@ feature 'user registers', { js: true, vcr: true } do
     fill_in_valid_user_info
     fill_in_invalid_card
     click_button 'Sign Up'
-    expect(page).to have_content('This card number looks invalid.')
+    expect(page).to have_content('The card number is not a valid credit card number.')
   end
 
   scenario 'with valid user info and declined card' do
@@ -37,7 +37,7 @@ feature 'user registers', { js: true, vcr: true } do
     fill_in_invalid_user_info
     fill_in_invalid_card
     click_button 'Sign Up'
-    expect(page).to have_content('This card number looks invalid.')
+    expect(page).to have_content('The card number is not a valid credit card number.')
   end
 
   scenario 'with invalid user info and declined card' do
@@ -61,20 +61,20 @@ feature 'user registers', { js: true, vcr: true } do
     fill_in 'Credit Card Number', with: '4242424242424242'
     fill_in 'Security Code', with: '123'
     select '7 - July', from: 'date_month'
-    select '2015', from: 'date_year'
+    select '2018', from: 'date_year'
   end
 
   def fill_in_invalid_card
     fill_in 'Credit Card Number', with: '123'
     fill_in 'Security Code', with: '123'
     select '7 - July', from: 'date_month'
-    select '2015', from: 'date_year'
+    select '2018', from: 'date_year'
   end
 
   def fill_in_declined_card
     fill_in 'Credit Card Number', with: '4000000000000002'
     fill_in 'Security Code', with: '123'
     select '7 - July', from: 'date_month'
-    select '2015', from: 'date_year'
+    select '2018', from: 'date_year'
   end
 end
