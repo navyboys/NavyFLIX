@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Myflix::Application.load_tasks
+NavyFLiX::Application.load_tasks

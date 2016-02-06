@@ -1,4 +1,4 @@
-Myflix::Application.routes.draw do
+NavyFLiX::Application.routes.draw do
   root to: 'pages#front'
   get 'home', to: 'videos#index'
 

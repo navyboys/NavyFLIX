@@ -22,7 +22,7 @@ describe InvitationsController do
     context 'with valid input' do
       before {
         set_current_user
-        post :create, invitation: { recipient_name: 'Joe Smith', recipient_email: 'joe@example.com', message: 'Hey join Myflix!' }
+        post :create, invitation: { recipient_name: 'Joe Smith', recipient_email: 'joe@example.com', message: 'Hey join NavyFLiX!' }
       }
 
       after { ActionMailer::Base.deliveries.clear }
@@ -47,7 +47,7 @@ describe InvitationsController do
     context 'with invalid input' do
       before {
         set_current_user
-        post :create, invitation: { recipient_email: 'joe@example.com', message: 'Hey join Myflix!' }
+        post :create, invitation: { recipient_email: 'joe@example.com', message: 'Hey join NavyFLiX!' }
       }
 
       it 'renders the :new template' do

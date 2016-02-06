@@ -1,4 +1,4 @@
-Myflix::Application.configure do
+NavyFLiX::Application.configure do
   config.cache_classes = false
 
   # Show full error reports and disable caching

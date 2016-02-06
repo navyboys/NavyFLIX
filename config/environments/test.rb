@@ -1,4 +1,4 @@
-Myflix::Application.configure do
+NavyFLiX::Application.configure do
   config.cache_classes = true
 
   config.serve_static_assets = true
