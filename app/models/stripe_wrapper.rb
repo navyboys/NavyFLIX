@@ -7,7 +7,7 @@ module StripeWrapper
       @error_message = options[:error_message]
     end
 
-    def self.create(options={})      
+    def self.create(options={})
       begin
         response = Stripe::Charge.create(
           amount: options[:amount],
@@ -34,10 +34,10 @@ module StripeWrapper
       @error_message = options[:error_message]
     end
 
-    def self.create(options={})      
+    def self.create(options={})
       begin
         response = Stripe::Customer.create(
-          card: options[:card],
+          source: options[:card],
           email: options[:user].email,
           plan: 'base'
         )
@@ -52,7 +52,7 @@ module StripeWrapper
     end
 
     def customer_token
-      response.id  
+      response.id
     end
   end
 end
