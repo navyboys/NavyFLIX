@@ -1,10 +1,14 @@
-%section.sign_in.container
+%section.register.container
   .row
     .col-sm-3
-    .col-sm-4.col-sm-offset-1
-      = bootstrap_form_tag url: forgot_passwords_path, class: 'sign_in' do |f|
+    .col-sm-6.col-bg-offset-1
+      = form_tag forgot_passwords_path, class: 'sign_in' do
         %header
-          %h1 Forgot Passoword
-        %fieldset
-          = f.email_field :email
-          = f.submit 'Send Email'
+          %h1 Forgot Password?
+          %p
+          %p We will send you an email with a link that you can use to reset your password.
+        .form-group
+          = label_tag :email, 'Email'
+          = text_field_tag :email
+        .form-group.action
+          %input(type="submit" value="Send Email" class="btn btn-default")
