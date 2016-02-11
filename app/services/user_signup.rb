@@ -3,27 +3,16 @@ class UserSignup
   attr_reader :error_message
 
   def initialize(user)
-    @user = user    
+    @user = user
   end
 
-  def sign_up(stripe_token, invitation_token)
+  def sign_up(invitation_token)
     if @user.valid?
-      customer = StripeWrapper::Customer.create(
-        :user => @user,
-        :card => stripe_token
-      )
-      if customer.successful?
-        @user.customer_token = customer.customer_token
-        @user.save
-        handle_invitation(invitation_token)
-        AppMailer.send_welcome_email(@user).deliver
-        @status = :success
-        self
-      else
-        @status = :failed
-        @error_message = customer.error_message
-        self
-      end
+      @user.save
+      handle_invitation(invitation_token)
+      AppMailer.send_welcome_email(@user).deliver
+      @status = :success
+      self
     else
       @status = :failed
       @error_message = 'Invalid user information. Please check the errors below.'

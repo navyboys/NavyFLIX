@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     params.permit!
 
     @user = User.new(params[:user])
-    result = UserSignup.new(@user).sign_up(params[:stripeToken], params[:invitation_token])
+    result = UserSignup.new(@user).sign_up(params[:invitation_token])
 
     if result.successful?
       flash[:success] = 'Thank you for registering with NavyFlix. Please sign in now.'
