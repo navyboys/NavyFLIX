@@ -27,4 +27,6 @@ NavyFLiX::Application.configure do
     :domain         => 'navy-flix.herokuapp.com',
     :authentication => :plain,
   }
+
+  Rails.application.routes.default_url_options[:host] = 'navyflix.herokuapp.com'
 end
