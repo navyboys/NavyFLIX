@@ -6,7 +6,7 @@ feature 'user resets password' do
 
     visit sign_in_path
     click_link 'Forgot Password?'
-    fill_in 'Email Address', with: alice.email
+    fill_in 'Email', with: alice.email
     click_button 'Send Email'
 
     open_email(alice.email)
@@ -17,7 +17,7 @@ feature 'user resets password' do
 
     fill_in 'Email', with: alice.email
     fill_in 'Password', with: 'new_password'
-    click_button 'Sign in'
+    click_button 'Sign In'
     expect(page).to have_content("Welcome, #{alice.full_name}")
 
     clear_email
