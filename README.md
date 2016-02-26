@@ -1,7 +1,7 @@
 ## NavyFLiX
 
 * A clone of NetFLiX which allows users to search and watch videos, add videos to ‘My Favorites’ and follow other users. Also equipped with Admin function to add video.
-* A practice project for [Tealeaf Academy](https://launchschool.com) Course 3: `Build Robust and Production Quality Applications`.
+* A practice project for [Tealeaf Academy](https://launchschool.com/courses) Course 3: `Build Robust and Production Quality Applications`.
 * Site: https://navyflix.herokuapp.com/
 
 ### Features
@@ -39,7 +39,7 @@
 - Development and test databases
 - TDD and red / green / refactor
 - Testing with RSpec
-- Generate fake data with** Fabricate**
+- Generate fake data with **Fabricate**
 - Dealing with cardinality and boundary conditions
 - Refactor with TDD
 - Macros
@@ -85,6 +85,6 @@
 - Secure sensitive data
 - Staging and production servers
 - Deployment pipeline
-- Continuous Integration
-- Continuous Delivery
-- Production error monitoring
+- Continuous Integration with **CircleCI**
+- Continuous Delivery with **Heroku**
+- Production error monitoring with **Sentry**
