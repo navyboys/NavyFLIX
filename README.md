@@ -4,6 +4,10 @@
 * A practice project for [Tealeaf Academy](https://launchschool.com/courses) Course 3: `Build Robust and Production Quality Applications`.
 * Site: https://navyflix.herokuapp.com/
 
+### Screen Shot
+
+<img src="https://lh3.googleusercontent.com/mQNg8M7SrWXNDB_XjQnDI95bBMe-_IOCPMD9F_7tMkcbbnMnQq4pbIEykiIBQ4u8zsX2sQGyuC_Pw9qWSocYTToIOQiP4fvsnQdu1qUCxAM4tYhb-Ro_oNxw9T3mASCyzK2f6q5-l1Ur5jX5u0_SkfnnOg9DNtQ_W0pW_Tqkc_kOkaYHCGeq2IPev7ST3R50qe_2uOK65Utl5Vlw4M7TiCvf5HC0o2OVKWAEY4lv3bX0hNqhDqdfg1wpFS021tyWFSFSyw9lgACr1fLJseQbjSZASroKqh6u98WSoD9kbX8sxrTtsvPTGMsr63fZqXV6smP7H554znXUa1WQuevuxg-E0Q-h4e1r2kqJqGfl8rIfwevpvq8gGVFmZ3Zb0DkW41_6qUZq7DuXpRu4b8_XGl4X0DyDEnREg9O82nT_eR3ke9awUfnR4LD6RbHvoNzPEm5Wrib934xQJVoeMYzwFdWHA927o9JlFEJAyra7YOkLiXmsRSPVFW-tcuYHrFQev6gIqpWzu-xxMAb8tJjl3cwyNxQMl5IxYteFi225VDB-z4wBIamE9UxJKFyEVGBCOStjyA=w1030-h599-no" width="800">
+
 ### Features
 
 * User signs up, signs in, resets passowrd and invites friends
