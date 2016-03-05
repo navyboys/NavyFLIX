@@ -4,10 +4,6 @@
 * A practice project for [Tealeaf Academy](https://launchschool.com/courses) Course 3: `Build Robust and Production Quality Applications`.
 * Site: https://navyflix.herokuapp.com/
 
-### Screen Shot
-
-<img src="https://lh3.googleusercontent.com/Z-5Ymofvftl3pTzJIZdstHV7NVG10Ej0Fw9-7E_qN3UfbcFXFQCOKcCkigggT-SoOtnAlqsAkdjmDkmaHabSoyLJzc-C9QyBgd8MqDcCW-JCEgvTiEdo4VqNQdjGYCxdHDgOCz9sqPdOwj8aK70x1W4PnK33EYRudDfGImOJom5gs7_28a5h0d1c7tF1NV8Hvly5y60edACLgRfR9lfp5j4G8gcrWJjo-sLFkECk8Z9qLMn-Pd13aLyxDsnIPs0m9th7ZnJzPrpce20WjEVYcn1-8SmdAYITSpOiQccUzfmj33L5Wx98bJkV2lzuJqPEcQl8VV0_dO6cw-AoszmBSONue_OMKZOcEZRGLnNdU7P2jEVaOdgpv16uMHUHbILA5-ePS0LCvK1K7oYpJIEIqwAoF8Do7GQFAu4Sijaal6pswJpn2ZtUwUUCoc0f4Y8ojvvr7c_BOI2701Iv1qf9JlniaJcaESrvovklDl8ix3kDBkwOscCOdkClWqi_wgKv2BAJiEe7-kDH5rKR17OsVL0L6yWC7CwXXFhm99YNr6ZaOpE7lIW7Ray38bNuQB8SDtWBRQ=w1030-h599-no" width="800">
-
 ### Features
 
 * User signs up, signs in, resets passowrd and invites friends
@@ -17,7 +13,7 @@
 * Searching by video title
 * Admin adds new video info including video path and pitures.
 
-### Stuff Learned
+### Skills
 
 * Built by **TDD** and **GitHub Work Flow**.
 * Model/Controller/Service/Features Test
@@ -92,3 +88,7 @@
 - Continuous Integration with **CircleCI**
 - Continuous Delivery with **Heroku**
 - Production error monitoring with **Sentry**
+
+### Screenshots
+
+![Screenshot - NavyFLiX](https://cloud.githubusercontent.com/assets/292731/13543859/4a48b984-e224-11e5-8d71-9855feca3d67.png)
